@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="audio player">
+    <meta name="keywords" content="audio player, Iuliia Pidlisna">
+    <meta name="author" content="Iuliia Pidlisna">
+
+    <link rel="shortcut icon" href="./assets/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <title>Audio Player</title>
+</head>
+
+<body class="page">
+    <main class="main">
+        <div class="background-image"></div>
+        <div class="main__container container">
+            <div class="main__content">
+                <div class="image"></div>
+                <div class="player">
+                    <div class="controls">
+                        <button class="play player-icon"></button>
+                        <div class="audio">
+                            <div class="audio__singer"></div>
+                            <div class="audio__title"></div>
+                        </div>
+                        <div class="buttons-prev-next">
+                            <button class="play-prev player-icon"></button>
+                            <button class="play-next player-icon"></button>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <input class="progress-bar" type="range" value="0" min="0" max="200">
+                        <div class="time">
+                            <p class="current-time">00:00</p>
+                            <p class="track-duration"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__content">
+
+                <div class="my-github">
+                    <a class="link my-github__link" href="https://github.com/IuliiaPi" target="_blank">
+                        <img class="my-github__img" src="./assets/svg/github.png" alt="github IuliiaPi" width="20"
+                            height="20"></a>
+                </div>
+
+                <div class="copyright">&copy; 2023 </div>
+
+                <div class="rs-school">
+                    <a class="link rs-school__link" href="https://rs.school/js/" target="_blank">
+                        <img class="rs-school__img" src="https://rs.school/images/rs_school_js.svg" alt="rs-school"
+                            width="50" height="20"></a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<script type="module" src="js/index.js"></script>
+
+</html>

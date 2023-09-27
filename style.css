@@ -1,0 +1,241 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-color: rgb(110, 157, 210);
+    --bg-main-color: rgb(218, 220, 218);
+}
+
+html,
+.page {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 100%;
+    letter-spacing: 0.06em;
+
+    color: var(--main-color);
+    background-color: var(--bg-main-color);
+}
+
+.container {
+    padding: 0 1.2rem;
+    margin: 0 auto;
+}
+
+.link {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.link:hover,
+.link:focus,
+.link:active {
+    opacity: .75;
+}
+
+/*  -------------------------  Main styles start -------------------------------  */
+
+.main {
+    flex: 1 0 auto;
+    /* background-image: url(./assets/images/forest.jpg); */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* filter: blur(8px); */
+    /* -webkit-filter: blur(8px); */
+}
+
+.background-image {
+    background-image: url(./assets/images/forest.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 2s ease;
+
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.main__content {
+    width: 300px;
+    height: 500px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    /* position: absolute; */
+    /* z-index: 2; */
+}
+
+.image {
+    height: 300px;
+    background-image: url(./assets/images/forest.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 2s ease;
+}
+
+.player {
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 20px;
+    color: rgb(9, 85, 186);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.audio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.audio__singer {
+    transition: all 0.9s ease;
+}
+
+.audio__title {
+    transition: all 0.9s ease;
+}
+
+.player-icon {
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.player-icon:hover {
+    opacity: 1;
+}
+
+.player-icon:active {
+    border: 0;
+    outline: 0;
+    transform: scale(1.1);
+}
+
+.play {
+    background-image: url('./assets/svg/play.png');
+}
+
+.pause {
+    background-image: url('./assets/svg/pause.png');
+}
+
+.buttons-prev-next {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.play-next {
+    background-image: url('./assets/svg/forward.png');
+}
+
+.play-prev {
+    background-image: url('./assets/svg/backward.png');
+}
+
+.time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: rgb(48, 47, 49);
+}
+
+.progress-bar {
+    width: 100%;
+    color: cornflowerblue;
+}
+
+/*  -------------------------  Main styles end -------------------------------  */
+
+/*  -------------------------  Footer styles start -------------------------------  */
+
+.footer {
+    flex: 0 0 auto;
+}
+
+.footer__content {
+    padding: 1rem 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 0.8rem;
+}
+
+.rs-school__img {
+    opacity: 0.7;
+}
+
+/*  -------------------------  Footer styles end -------------------------------  */
+
+
+/*  -------------------------  Media styles start -------------------------------  */
+
+@media screen and (max-width: 820px) {
+
+    .page {
+        font-size: 1.1rem;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .page {
+        font-size: 0.8rem;
+    }
+
+}
+
+/*  -------------------------  Media styles end -------------------------------  */
