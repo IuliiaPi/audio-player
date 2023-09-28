@@ -23,7 +23,13 @@ function changeTrackContent() {
     image.style.backgroundImage = `url(${playList[playNum].image})`;
     audioSinger.textContent = `${playList[playNum].singer}`;
     audioTitle.textContent = `${playList[playNum].title}`;
-    trackDuration.textContent = `${playList[playNum].duration}`;
+    // trackDuration.textContent = `${playList[playNum].duration}`;
+
+    audio.addEventListener('loadedmetadata', () => {
+        const minutesDuration = Math.floor(audio.duration / 60);
+        const secondsDuration = Math.floor(audio.duration % 60);
+        trackDuration.innerHTML = `${minutesDuration}:${secondsDuration}`;
+    });
 }
 changeTrackContent();
 
@@ -76,7 +82,43 @@ btnPlayPrev.addEventListener("click", getPlayPrev);
 audio.addEventListener('ended', getPlayNext);
 
 
-// ---------progress-bar--------
+// progress-bar
 
-const progress = document.querySelector('.progress-bar');
-const timeline = document.querySelector('.timeline');
+const progressBarContainer = document.querySelector('.progress-bar-container');
+const progressBar = document.querySelector('.progress-bar');
+const currentTime = document.querySelector('.current-time');
+
+function getCurrentTrackTime() {
+    let minutesCurrent = Math.floor(audio.currentTime / 60);
+    if (minutesCurrent < 10) {
+        minutesCurrent = `0${minutesCurrent}`;
+    }
+
+    let secondsCurrent = Math.floor(audio.currentTime % 60);
+    if (secondsCurrent < 10) {
+        secondsCurrent = `0${secondsCurrent}`;
+    }
+    
+    currentTime.innerHTML = `${minutesCurrent}:${secondsCurrent}`;
+}
+
+function updateProgress(event) {
+    const durationTrack = event.srcElement.duration;
+    const currentTimeTrack = event.srcElement.currentTime;
+    const progressAudio = (currentTimeTrack / durationTrack) * 100;
+
+    progressBar.style.width = `${progressAudio}%`;
+    getCurrentTrackTime();
+};
+
+audio.addEventListener('timeupdate', updateProgress);
+
+function rewindAudio(event) {
+    const width = event.target.clientWidth;
+    const clickWidth = event.offsetX;
+    const duration = audio.duration;
+
+    audio.currentTime = (clickWidth / width) * duration;
+};
+
+progressBarContainer.addEventListener('click', rewindAudio);
